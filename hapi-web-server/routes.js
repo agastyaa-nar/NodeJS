@@ -21,6 +21,14 @@ const route = [
   }
 },
 {
+  method: 'GET',
+  path: '/hello/{name?}',
+  handler: (request, h) => {
+      const {name = "stranger"} = request.params
+      return `Hello ${name}!`
+  }
+},
+{
   method: "*",
   path: "/about",
   handler: (request, h) => {
